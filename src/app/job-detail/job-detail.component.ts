@@ -60,7 +60,7 @@ export class JobDetailComponent implements OnInit {
   }
 
   updateSalary() {
-
+    this.dataService.updateSalary({salary: Number(this.salary), id: this.applicationId}).subscribe(() => {})
   }
 
   updateApplicationStatus() {

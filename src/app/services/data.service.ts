@@ -24,7 +24,6 @@ export class DataService {
     return this.http.get<ApplicationNotes[]>(`${SERVER_BASE_URL}/jobNotes?jobKey=${applicationId}`)
   }
 
-
   createApplication(newApplication: Application) {
     return this.http.post<Application>(`${SERVER_BASE_URL}/job`, newApplication)
   }
@@ -39,6 +38,10 @@ export class DataService {
 
   updateApplicationStatus(body: { applicationStatus: ApplicationStatus, id: number}) {
     return this.http.post<any>(`${SERVER_BASE_URL}/updateApplicationStatus`, body)
+  }
+
+  updateSalary(body: {salary: number, id: number}) {
+    return this.http.post<any>(`${SERVER_BASE_URL}/updateSalary`, body)
   }
 
 }
