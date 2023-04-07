@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/dashboard" routerLinkActive="true">
+        <mat-icon>dashboard</mat-icon>
+        Dashboard
+    </button>
+    <button mat-menu-item routerLink="/applications" routerLinkActive="true">
+        <mat-icon>assignment</mat-icon>
+        Applications
+    </button>
+</mat-menu>

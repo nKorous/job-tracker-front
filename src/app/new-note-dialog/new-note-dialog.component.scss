@@ -1,0 +1,17 @@
+:host {
+    .new-note-container {
+        .new-note-header {
+            background: lightgray;
+            color: white;
+        }
+
+        .new-note-note {
+            margin: 5px;
+
+            form {
+                display: flex;
+                flex-direction: column
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+<div class="job-detail-container">
+    <div class="job-detail-header">
+        <h1>{{ application?.company }}</h1>
+        <h3>{{ application?.job_title }}</h3>
+    </div>
+
+    <hr>
+
+    <div class="job-detail-details">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Location</td>
+                    <td>{{ application?.location }}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Date Applied</td>
+                    <td>{{ application?.date_applied | date: 'YYYY-MM-dd' }}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Site Applied</td>
+                    <td>{{ application?.site_applied }}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Contacted Back</td>
+                    <td>
+                        <mat-checkbox #contactedBackInput [checked]="contactedBack"
+                            (change)="contactedBack = contactedBackInput.checked"></mat-checkbox>
+                    </td>
+                    <td>
+                        <button mat-raised-button class="create-new-button" (click)="updateContactedBack()">Update
+                            Contacted Back</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Salary</td>
+                    <td><input #salaryInput type="number" min="0" [value]="salary" (keyup)="salary = salaryInput.value">
+                    </td>
+                    <td>
+                        <button mat-raised-button class="create-new-button" (click)="updateSalary()">Update
+                            Salary</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Application Status</td>
+                    <td>
+                        <mat-select #applicationStatusInput class="mat-select-select" [value]="applicationStatus" (selectionChange)="applicationStatus = applicationStatusInput.value">
+                            <mat-option value="submitted">Submitted</mat-option>
+                            <mat-option value="interviewScheduled">Interview Scheduled</mat-option>
+                            <mat-option value="companyNotInterested">Company Not Interested</mat-option>
+                            <mat-option value="hired">Hired</mat-option>
+                            <mat-option value="waitingOnCompany">Waiting On Company</mat-option>
+                            <mat-option value="waitingOnMe">Waiting On Me</mat-option>
+                            <mat-option value="offerPending">Offer Pending</mat-option>
+                        </mat-select>
+                    </td>
+                    <td>
+                        <button mat-raised-button class="create-new-button" (click)="updateApplicationStatus()">Update Application Status</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="job-details-notes">
+        <div class="new-note-contaner">
+            <button class="create-new-button" mat-raised-button (click)="openCreateNewNoteDialog()">Create New Note</button>
+        </div>
+        <mat-card class="note-card" *ngFor="let note of applicationNotes">
+            <mat-card-header>
+                <mat-card-title>{{ note.note_title }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{ note.note_body }}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

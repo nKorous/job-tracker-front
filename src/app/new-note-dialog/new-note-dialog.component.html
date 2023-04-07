@@ -1,0 +1,20 @@
+<div class="new-note-container">
+    <div class="new-note-header">
+        <h1>New Note</h1>
+    </div>
+    <div class="new-note-note">
+        <form [formGroup]="newNoteFormGroup" (ngSubmit)="createNewNote()">
+            <mat-form-field>
+                <mat-label>Note Title</mat-label>
+                <input matInput type="text" formControlName="noteTitle">
+            </mat-form-field>
+            
+            <mat-form-field>
+                <mat-label>Note Body</mat-label>
+                <textarea matInput cols="15" rows="10" formControlName="noteBody"></textarea>
+            </mat-form-field>
+
+            <button mat-raised-button class="create-new-button" type="submit" [disabled]="!newNoteFormGroup.valid">Create New Note</button>
+        </form>
+    </div>
+</div>

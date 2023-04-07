@@ -1,0 +1,26 @@
+:host {
+    
+    .job-detail-container {
+        margin: 5px;
+
+        table {
+            td {
+                padding: 5px;
+            }
+            .mat-select-select {
+                border: 1px solid black;
+                border-radius: 5px;
+                padding: 3px;
+            }
+        }     
+    }
+
+    .job-details-notes {
+        height: 400px;
+        overflow-y: auto;
+
+        .note-card {
+            margin: 5px 0px 0px 0px;
+        }
+    }
+}

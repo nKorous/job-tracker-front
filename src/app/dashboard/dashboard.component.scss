@@ -1,0 +1,24 @@
+:host {
+    .dashboard-container {
+        .tile-content {
+            p {
+                font-size: 48px;
+            }
+
+            table {
+                width: 100%;
+
+                td {
+                    padding: 5px;
+                }
+                .interview-scheduled-row {
+
+                    &:hover {
+                        cursor: pointer;
+                        background: lightgray;
+                    }
+                }
+            }
+        }
+    }
+}

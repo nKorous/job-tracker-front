@@ -1,0 +1,55 @@
+<div class="new-application-dialog-container">
+    <h1>Create New Application</h1>
+    <form [formGroup]="newApplicationForm" (ngSubmit)="submitForm()">
+        <mat-form-field>
+            <mat-label>Company</mat-label>
+            <input matInput type="text" formControlName="company">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Job Title</mat-label>
+            <input matInput type="text" formControlName="jobTitle">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Location</mat-label>
+            <input matInput type="text" formControlName="location">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Salary</mat-label>
+            <input matInput type="number" min="0" formControlName="salary">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Application Status</mat-label>
+            <mat-select formControlName="applicationStatus">
+                <mat-option value="submitted">Submitted</mat-option>
+                <mat-option value="interviewScheduled">Interview Scheduled</mat-option>
+                <mat-option value="companyNotInterested">Company Not Interested</mat-option>
+                <mat-option value="hired">Hired</mat-option>
+                <mat-option value="waitingOnCompany">Waiting On Company</mat-option>
+                <mat-option value="waitingOnMe">Waiting On Me</mat-option>
+                <mat-option value="offerPending">Offer Pending</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Site Applied</mat-label>
+            <mat-select formControlName="siteApplied">
+                <mat-option value="indeed">Indeed</mat-option>
+                <mat-option value="linkedIn">LinkedIn</mat-option>
+                <mat-option value="glassdoor">Glassdoor</mat-option>
+                <mat-option value="companyWebsite">Company Website</mat-option>
+                <mat-option value="recruiter">Recruiter</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Date Applied</mat-label>
+            <input matInput type="date" formControlName="dateApplied">
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" class="create-new-button" [disabled]="!newApplicationForm.valid">Create New Application</button>
+    </form>
+</div>
