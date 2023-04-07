@@ -1,20 +1,45 @@
 :host {
     .job-list-container {
-        margin: 5px;
+        margin: 0px 5px 5px 5px;
 
         .button-container {
             position: sticky;
             top: 75px;
             z-index: 98;
             background: white;
-            padding: 10px 0px 25px 0px;
+            padding: 0px 0px 25px 0px;
+
+            mat-form-field {
+                width: 350px;
+                margin-top: 15px;
+            }
         }
+
+        .search-container {
+            z-index: 98;
+            margin-top: 10px;
+            width: 350px;
+            position: sticky;
+            top: 155px;
+        }        
 
         table {
             .header-row {
                 position: sticky;
-                top: 135px;
+                top: 220px;
                 z-index: 97;
+            }
+
+            .not-interested {
+                background: red !important;
+            }
+
+            .interview-scheduled {
+                background: green !important;
+            }
+
+            .waiting-on-company {
+                background: lightpink !important;
             }
 
             .application-row {
@@ -28,13 +53,6 @@
                 }
             }
 
-            .not-interested {
-                background: red;
-            }
-
-            .interview-scheduled {
-                background: green;
-            }
         }
     }
 }

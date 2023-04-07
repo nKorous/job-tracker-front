@@ -1,6 +1,13 @@
 <div class="job-list-container">
     <div class="button-container">
         <button mat-raised-button class="create-new-button" (click)="triggerNewApplicationModal()">New Application</button>
+
+        <br/>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Search...</mat-label>
+            <input #searchInput matInput (keyup)="searchApplications(searchInput.value)">
+        </mat-form-field>
     </div>
     <table mat-table [dataSource]="applications">
         
@@ -52,6 +59,7 @@
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header-row"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="rowClicked(row)" class="application-row" [ngClass]="{'not-interested': row.application_status === 'companyNotInterested', 'interview-scheduled': row.application_status === 'interviewScheduled'}"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="rowClicked(row)" class="application-row" 
+            [ngClass]="{'not-interested': row.application_status === 'companyNotInterested', 'interview-scheduled': row.application_status === 'interviewScheduled', 'waiting-on-company': row.application_status === 'waitingOnCompany'}"></tr>
     </table>
 </div>

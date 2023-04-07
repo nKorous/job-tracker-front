@@ -55,4 +55,9 @@ export class JobListComponent implements OnInit, OnDestroy {
     })
   }
 
+  searchApplications(input: string) {
+    const filter = input.toLowerCase().trim()
+    this.applications.filter = filter
+  }
+
 }
