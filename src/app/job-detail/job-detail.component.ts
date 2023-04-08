@@ -39,7 +39,6 @@ export class JobDetailComponent implements OnInit {
   getApplication() {
     this.dataService.getApplication(this.applicationId)
       .subscribe(data => {
-        console.log('application', data)
         this.application = data[0]
         this.contactedBack = this.application?.contacted_back
         this.salary = this.application?.salary ? this.application?.salary.toString() : '0'
@@ -49,7 +48,6 @@ export class JobDetailComponent implements OnInit {
 
   getApplicationNotes() {
     this.applicationNotesSubscription = this.dataService.getNotes(this.applicationId).subscribe(notes => {
-      console.log('application Notes', notes)
       this.applicationNotes = notes
     })
   }
