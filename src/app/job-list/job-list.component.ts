@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Application } from '../interfaces/application';
 import { Subscription } from 'rxjs';
@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { NewApplicationDialogComponent } from '../new-application-dialog/new-application-dialog.component';
 import { Router } from '@angular/router';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-job-list',
@@ -13,6 +14,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./job-list.component.scss']
 })
 export class JobListComponent implements OnInit, OnDestroy {
+
+  @ViewChild(MatPaginator) matPaginator: MatPaginator
+
   applications: MatTableDataSource<Application> = new MatTableDataSource()
   applicationSubscription: Subscription = new Subscription()
   displayedColumns: string[] = ['id', 'company', 'job_title', 'location', 'salary', 'contacted_back', 'application_status', 'site_applied', 'date_applied']
@@ -35,6 +39,7 @@ export class JobListComponent implements OnInit, OnDestroy {
   getApplications() {
     this.applicationSubscription = this.dataService.getApplications().subscribe(data => {
       this.applications = new MatTableDataSource(data)
+      this.applications.paginator = this.matPaginator
     })
   }
 
@@ -58,6 +63,10 @@ export class JobListComponent implements OnInit, OnDestroy {
   searchApplications(input: string) {
     const filter = input.toLowerCase().trim()
     this.applications.filter = filter
+
+    if(this.matPaginator) {
+      this.matPaginator.firstPage()
+    }
   }
 
 }

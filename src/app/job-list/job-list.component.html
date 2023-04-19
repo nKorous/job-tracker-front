@@ -62,4 +62,6 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="rowClicked(row)" class="application-row" 
             [ngClass]="{'not-interested': row.application_status === 'companyNotInterested', 'interview-scheduled': row.application_status === 'interviewScheduled', 'waiting-on-company': row.application_status === 'waitingOnCompany'}"></tr>
     </table>
+
+    <mat-paginator [pageSizeOptions]="[25, 50, 100]"></mat-paginator>
 </div>

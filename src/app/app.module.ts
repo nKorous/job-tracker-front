@@ -26,6 +26,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list'
+import { MatPaginatorModule } from '@angular/material/paginator'
 
 
 
@@ -63,6 +64,7 @@ import { MatGridListModule } from '@angular/material/grid-list'
     MatCheckboxModule,
     MatCardModule,
     MatGridListModule,
+    MatPaginatorModule,
 
   ],
   providers: [],
