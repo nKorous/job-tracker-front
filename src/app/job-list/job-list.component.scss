@@ -21,35 +21,40 @@
             width: 350px;
             position: sticky;
             top: 155px;
-        }        
+        }
 
-        table {
-            .header-row {
-                position: sticky;
-                top: 220px;
-                z-index: 97;
-            }
+        .table-container {
+            height: 600px;
+            overflow-y: auto;
 
-            .not-interested {
-                background: red !important;
-            }
-
-            .interview-scheduled {
-                background: green !important;
-            }
-
-            .waiting-on-company {
-                background: lightpink !important;
-            }
-
-            .application-row {
-                &:nth-child(even) {
-                    background: lightgray;
+            table {
+                .header-row {
+                    position: sticky;
+                    top: 0px;
+                    z-index: 97;
                 }
 
-                &:hover {
-                    background: lightblue;
-                    cursor: pointer;
+                .not-interested {
+                    background: red !important;
+                }
+
+                .interview-scheduled {
+                    background: green !important;
+                }
+
+                .waiting-on-company {
+                    background: lightpink !important;
+                }
+
+                .application-row {
+                    &:nth-child(even) {
+                        background: lightgray;
+                    }
+
+                    &:hover {
+                        background: lightblue;
+                        cursor: pointer;
+                    }
                 }
             }
 

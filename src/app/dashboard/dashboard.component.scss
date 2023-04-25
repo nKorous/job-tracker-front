@@ -3,15 +3,21 @@
         .tile-content {
             p {
                 font-size: 48px;
+                vertical-align: middle;
             }
+        }
 
+        .table-content {
+            height: 100%;
             table {
                 width: 100%;
+                position: relative;
+                top: 45px;
 
                 td {
                     padding: 5px;
                 }
-                .interview-scheduled-row {
+                .scheduled-row {
 
                     &:hover {
                         cursor: pointer;

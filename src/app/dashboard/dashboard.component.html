@@ -1,5 +1,5 @@
 <div class="dashboard-container">
-    <mat-grid-list cols="4" rowHeight="1:1" gutterSize="5px">
+    <mat-grid-list cols="4" rowHeight="400px" gutterSize="5px">
         
         <mat-grid-tile cols="1">
             <mat-grid-tile-header>Total Applications</mat-grid-tile-header>
@@ -33,7 +33,7 @@
 
         <mat-grid-tile colspan="2">
             <mat-grid-tile-header>Scheduled Interviews</mat-grid-tile-header>
-            <div class="tile-content">
+            <div class="table-content">
                 <table>
                     <thead>
                         <tr>
@@ -43,7 +43,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="interview-scheduled-row" *ngFor="let app of interviewsScheduled" (click)="navToApplicationDetail(app)">
+                        <tr class="scheduled-row" *ngFor="let app of interviewsScheduled" (click)="navToApplicationDetail(app)">
                             <td>{{ app.company }}</td>
                             <td>{{ app.job_title }}</td>
                             <td>{{ app.date_applied | date: "YYYY-MM-dd" }}</td>
@@ -55,7 +55,7 @@
 
         <mat-grid-tile colspan="2">
             <mat-grid-tile-header>Waiting On Me</mat-grid-tile-header>
-            <div class="tile-content">
+            <div class="table-content">
                 <table>
                     <thead>
                         <tr>
@@ -65,7 +65,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="waiting-on-me-row" *ngFor="let app of waitingOnMe" (click)="navToApplicationDetail(app)">
+                        <tr class="scheduled-row" *ngFor="let app of waitingOnMe" (click)="navToApplicationDetail(app)">
                             <td>{{ app.company }}</td>
                             <td>{{ app.job_title }}</td>
                             <td>{{ app.date_applied | date: "YYYY-MM-dd" }}</td>
